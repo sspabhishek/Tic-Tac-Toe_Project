@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2fc83;
+    background-image: radial-gradient(at 50% 45%, hsl(348, 100%, 50%) 0, transparent 59%);
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #333;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+}
+
+.col {
+    height: 75px;
+    width: 75px;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    cursor: pointer;
+    color: #000;
+    background-color: #fafafa;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.col:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+.col.clicked {
+    background-color: #d0d0d0;
+    cursor: not-allowed;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+}
+
+.winner {
+    color: #00ff08;
+}
+
+.draw {
+    color: #ff0000;
+}
+
+#fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (max-width: 600px) {
+    .col {
+        height: 50px;
+        width: 50px;
+        font-size: 28px;
+    }
+}
